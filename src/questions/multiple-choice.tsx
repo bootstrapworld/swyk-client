@@ -31,11 +31,13 @@ export const MultipleChoiceMethods: QuestionMethods<
   MultipleChoiceAnswer
 > = {
   PromptView: ({ prompt, image }) => (
-    <MarkdownView
-      markdown={prompt.prompt}
-      imag={image}
-      snippetOptions={{ lineNumbers: true }}
-    />
+    <>
+      <MarkdownView
+        markdown={prompt.prompt}
+        snippetOptions={{ lineNumbers: true }}
+      />
+      {image && <img src={image} alt="" />}
+    </>
   ),
 
   questionState(prompt, answer) {

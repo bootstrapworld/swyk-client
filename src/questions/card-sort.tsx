@@ -80,9 +80,10 @@ export const CardSortMethods: QuestionMethods<
   Card[],
   CardSortAnswer | CardSortResponse
 > = {
-  PromptView: ({ prompt }) => (
+  PromptView: ({ prompt, image }) => (
     <div>
       <MarkdownView markdown={prompt.prompt} />
+      {image && <img src={image} alt="" />}
     </div>
   ),
 

@@ -23,9 +23,9 @@ export const ShortAnswerMethods: QuestionMethods<
     <div>
       <MarkdownView
         markdown={prompt.prompt}
-        imag={image}
         snippetOptions={{ lineNumbers: true }}
       />
+      {image && <img src={image} alt="" />}
     </div>
   ),
   ResponseView: ({ prompt, submit, formValidators }) => {

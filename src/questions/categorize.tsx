@@ -18,7 +18,12 @@ export type CategorizeAnswer = Record<string, string[]>;
 export type Categorize = QuestionFields<CategorizePrompt, CategorizeAnswer>;
 
 export const CategorizeMethods: QuestionMethods<CategorizePrompt, CategorizeAnswer> = {
-  PromptView: ({ prompt }) => <MarkdownView markdown={prompt.prompt} />,
+  PromptView: ({ prompt, image }) => (
+    <>
+      <MarkdownView markdown={prompt.prompt} />
+      {image && <img src={image} alt="" />}
+    </>
+  ),
 
   ResponseView: ({ prompt, answer, formValidators }) => {
     const { setValue, getValues } = formValidators;

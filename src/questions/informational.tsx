@@ -14,11 +14,13 @@ export const InformationalMethods: QuestionMethods<
   null
 > = {
   PromptView: ({ prompt, image }) => (
-    <MarkdownView
-      markdown={prompt.prompt}
-      imag={image}
-      snippetOptions={{ lineNumbers: true }}
-    />
+    <>
+      <MarkdownView
+        markdown={prompt.prompt}
+        snippetOptions={{ lineNumbers: true }}
+      />
+      {image && <img src={image} alt="" />}
+    </>
   ),
 
   questionState() {

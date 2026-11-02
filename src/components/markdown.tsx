@@ -61,7 +61,6 @@ declare global {
 
 export const MarkdownView: React.FC<{
   markdown: string;
-  imag?: string;
   snippetOptions?: Partial<SnippetOptions>;
 }> = ({ markdown, snippetOptions }) => {
   const ref = useRef<HTMLDivElement>(null);

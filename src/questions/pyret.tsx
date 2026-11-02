@@ -18,11 +18,12 @@ type PyretPrompt = { prompt: Markdown; program: string; checkblock?: string };
 export { Pyret, PyretPrompt, PyretAnswer };
 
 export const PyretMethods: QuestionMethods<PyretPrompt, PyretAnswer> = {
-  PromptView: ({ prompt }) => (
+  PromptView: ({ prompt, image }) => (
     <>
       <p>
         <MarkdownView markdown={prompt.prompt} />
       </p>
+      {image && <img src={image} alt="" />}
     </>
   ),
 
