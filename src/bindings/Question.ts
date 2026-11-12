@@ -24,5 +24,9 @@ export interface QuestionFields<Prompt, Answer> {
 	answer: Answer,
 	context?: Markdown,
 	promptExplanation?: boolean,
-	image?: string
+	image?: string,
+	// Optional for now while quiz authors migrate existing quiz.json files;
+	// both are expected to become required once that migration is done.
+	label?: string,
+	construct?: string
 }
